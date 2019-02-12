@@ -1,3 +1,28 @@
+//Open/Closed/Closing Status
+document.addEventListener('DOMContentLoaded', function() {
+    var time = moment().format('Hmm');
+    var day = moment().isoWeekday();
+
+    var location1 = document.querySelector('.locations .item:first-of-type .status');
+    var location2 = document.querySelector('.locations .item:last-of-type .status');
+
+    if (day > 0 && day < 7 && time >= 1000 && time < 1600) {
+        location1.classList.add('open');
+        location1.childNodes[2].textContent = 'Open';
+    } else {
+        location1.classList.add('closed');
+        location1.childNodes[2].textContent = 'Closed';
+    }
+
+    if (day > 0 && day < 6 && time >= 900 && time < 1600) {
+        location2.classList.add('open');
+        location2.childNodes[2].textContent = 'Open';
+    } else {
+        location2.classList.add('closed');
+        location2.childNodes[2].textContent = 'Closed';
+    }
+})
+
 // Links return false
 $('a:not(.force), button:not(.force), input[type="submit"]:not(.force)').click(function() {
     return false

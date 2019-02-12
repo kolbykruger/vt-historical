@@ -136,10 +136,10 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
     .nav{display: none;}
     }
 
-.subnav {display: flex; align-items: center; flex-flow: row nowrap; background: rgb(15, 45, 82); padding: 5px;}
+.subnav {display: flex; align-items: center; flex-flow: row nowrap; background: rgb(214, 209, 202); padding: 5px;}
 .subnav .inner {max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; flex-flow: row nowrap; justify-content: flex-end;}
 .subnav .item {margin: 0 0 0 20px;}
-.subnav .item a {text-decoration: none; color: rgb(214, 209, 202);}
+.subnav .item a {text-decoration: none; color: inherit;}
 
 /*Mobile Nav*/
 .mobile_nav{display:none; user-select: none; background: rgb(248, 248, 248); padding:0 0 100px; position: fixed; width: 100%; height: 100%; top: 72px; z-index: 9999999; overflow-y: auto;}
@@ -250,12 +250,20 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 /* Locations */
 .locations {max-width: 1200px; margin: 0 auto;}
 .locations .group {display: flex; align-items: stretch; justify-content: center; margin: 0 -10px;}
-.locations .item {display: flex; align-items: flex-start; justify-content: space-between; margin: 20px; color: #fff; border-radius: 16px;}
+.locations .item {position: relative; display: flex; align-items: stretch; justify-content: space-between; margin: 20px; color: #fff; border-radius: 16px; overflow: hidden; z-index: 1;}
 .locations .item > * {flex: 1; padding: 40px;}
-.locations .item .title {}
-.locations .item .info {font-family: helvetica, sans-serif; font-size: 1.8rem; background: rgba(255,255,255,0.075);}
+.locations .item a {text-decoration: none; color: inherit;}
+.locations .item .title {margin: 0;}
+.locations .item .info {font-family: helvetica, sans-serif; font-size: 1.8rem;}
 .locations .item .info > div:not(:last-of-type) {margin-bottom: 2em;}
-.locations .item .info .label {margin-bottom: 0.5em; font-size: 1.6rem;}
+.locations .item .status {display: inline-flex; align-items: center; padding: 6px; border-radius: 3px;}
+.locations .item .status i {margin-right: 8px;}
+.locations .item .status.open i.fas {color: green;}
+.locations .item .status.closed i.fas {color: red;}
+
+.locations .item:first-of-type {background-image: url(../images/location-1.jpg); background-size: cover;}
+.locations .item:last-of-type {background-image: url(../images/location-2.jpg); background-size: cover;}
+.locations .item::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.85)); z-index: -1;}
 
 /*Features*/
 .features {overflow: hidden; margin: 30px -10px; display: flex; flex-flow: row wrap;}
