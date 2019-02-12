@@ -153,7 +153,9 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 .subnav {display: flex; align-items: center; flex-flow: row nowrap; background: rgb(214, 209, 202); padding: 8px;}
 .subnav .inner {max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; flex-flow: row nowrap; justify-content: flex-end;}
 .subnav .item {margin: 0 0 0 20px;}
-.subnav .item a {text-decoration: none; color: inherit;}
+.subnav .item a {text-decoration: none; color: inherit; opacity: 0.75;}
+.subnav .item a:hover,
+.subnav .item a:focus {opacity: 1;}
 
 /*Mobile Nav*/
 .mobile_nav{display:none; user-select: none; background: rgb(248, 248, 248); padding:0 0 100px; position: fixed; width: 100%; height: 100%; top: 72px; z-index: 9999999; overflow-y: auto;}
@@ -262,7 +264,7 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
     }
 
 /* Locations */
-.locations {max-width: 1200px; margin: 0 auto;}
+.locations {max-width: 1200px; margin: 30px auto;}
 .locations .group {display: flex; align-items: stretch; justify-content: center; margin: 0 -10px;}
 .locations .item {position: relative; display: flex; align-items: center; justify-content: space-between; margin: 20px; color: #fff; border-radius: 16px; overflow: hidden; z-index: 1;}
 .locations .item > * {flex: 1; padding: 40px;}
