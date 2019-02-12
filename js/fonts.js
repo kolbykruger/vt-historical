@@ -7,7 +7,15 @@
         sessionStorage.fonts = true;
       },
       google: {
-        families: ['Montserrat:300,400,400i,500,600,700']
+        families: ['EB+Garamond:400,400i,500,600,700,800']
+      },
+      custom: {
+          families: [
+              'helvetica'
+          ],
+          urls: [
+              '../fonts/helvetica/style.css'
+          ]
       },
       timeout: 2000
     };
