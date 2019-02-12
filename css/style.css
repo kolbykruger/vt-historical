@@ -94,7 +94,7 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 /*Header*/
 .headerWrap{width: 100%;}
 .header{width: 100%; max-width: 1400px; margin: 0 auto; padding: 20px 10px; position: relative; display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;}
-.header .logo{width: 50%; max-width: 240px;}
+.header .logo{width: 50%; max-width: 240px; transition: 150ms;}
 .header .logo a{display: block;}
 .header .logo img{width: 100%;}
 .header .mobile_icons{display: none;}
@@ -103,6 +103,10 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 .header .search_wrap{position: absolute; right: 10px; border: 1px solid #e4e4e4; top: 10px; border-radius: 3px;}
 .header .search button{position: absolute; background: none; height: 100%; cursor: pointer; outline: 0; border: 0; color: #222; top: 50%; right: 0; padding: 0 10px; line-height: 100%; font-size: 1.2rem; transform: translateY(-50%);}
 .header .search input{-webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 2px; border: 0; background: #fbfbfb; outline: 0; width: 100%; font-size: 1.4rem; padding: 8px 30px 8px 8px; color: #4e4e4e; font-style: italic;}
+
+.headerWrap.sticky {position: fixed; top: 0; left: 0; background: #fff; box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08); z-index: 10;}
+.headerWrap.sticky .subnav {max-height: 0; overflow: hidden; padding: 0;}
+.headerWrap.sticky .header .logo {max-width: 120px;}
 
     @media (max-width: 900px) {
     .header{height: 72px; display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center; margin: 0 auto;}
