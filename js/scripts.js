@@ -2,11 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     var time = moment().format('Hmm'), day = moment().isoWeekday();
 
-    updateStatus(document.querySelector('.locations .item:first-of-type .status'), 0, 7, 1000, 1600);
-    updateStatus(document.querySelector('.locations .item:last-of-type .status'), 0, 6, 900, 1600);
+    // 1 [Monday] - 7 [Sunday] // Time in MILITARY format
+    updateStatus(document.querySelector('.locations .item:first-of-type .status'), 2, 7, 1000, 1600);
+    updateStatus(document.querySelector('.locations .item:last-of-type .status'), 1, 6, 900, 1600);
 
     function updateStatus(element, startDay, endDay, startTime, endTime) {
-        if (day > startDay && day < endDay && time >= startTime && time < endTime) {
+        if (day >= startDay && day < endDay && time >= startTime && time < endTime) {
             element.classList.add('open');
             element.childNodes[2].textContent = 'Open';
         } else {
@@ -14,8 +15,28 @@ document.addEventListener('DOMContentLoaded', function() {
             element.childNodes[2].textContent = 'Closed';
         }
     }
-
 })
+
+// Sticky Header
+window.addEventListener('scroll', function() {
+    stickyHeader()
+})
+
+// Get the navbar
+let header = document.querySelector('.headerWrap');
+
+// Get the offset position of the navbar
+const sticky = header.offsetTop;
+const stickyHeight = header.offsetHeight;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function stickyHeader() {
+  if (window.pageYOffset >= (sticky + stickyHeight / 2)) {
+    header.classList.add('sticky')
+  } else {
+    header.classList.remove('sticky');
+  }
+}
 
 // Links return false
 $('a:not(.force), button:not(.force), input[type="submit"]:not(.force)').click(function() {
