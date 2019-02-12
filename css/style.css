@@ -118,8 +118,9 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 /*Nav*/
 .nav{user-select: none; text-align: center; z-index: 10; display: flex; flex-flow: row wrap; align-items: center;}
 .nav .item{position: relative;}
-.nav .item a{margin:0 0 0 42px; display: block; color: rgb(27, 86, 51);  text-decoration: none; font-weight: 400; font-size: 3rem; transition: color 0.3s cubic-bezier(.25,.8,.25,1);}
+.nav .item a{position: relative; margin:0 0 0 42px; display: block; color: rgb(27, 86, 51);  text-decoration: none; font-weight: 400; font-size: 3rem; transition: color 0.3s cubic-bezier(.25,.8,.25,1);}
 .nav .item a:hover, .nav .item a:focus{color: rgb(217, 136, 39);}
+.nav .item a::before {content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 8px; width: 100%; max-width: 0; transition: 150ms;}
 .nav .item:first-child a{margin:0}
 .nav .item i{font-size: 1.2rem; cursor: pointer; margin: 0 0 0 6px;}
 .nav .item.open{background: rgba(255,255,255,.2);color: rgb(217, 136, 39);}
@@ -134,7 +135,16 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 .nav .drop_trigger .drop_menu.column_nav{column-count: 2; column-fill: auto;}
 
 .nav:hover .item a {color: rgb(214, 209, 202);}
-.nav:hover .item a:hover {color: rgb(217, 136, 39);}
+.nav:hover .item:nth-of-type(1) a:hover {color: rgb(27, 86, 51);}
+.nav:hover .item:nth-of-type(2) a:hover {color: rgb(61, 179, 227);}
+.nav:hover .item:nth-of-type(3) a:hover {color: rgb(15, 45, 82);}
+.nav:hover .item:nth-of-type(4) a:hover {color: rgb(217, 136, 39);}
+
+.nav:hover .item a:hover::before {max-width: 100%;}
+.nav:hover .item:nth-of-type(1) a:hover::before {background: rgb(27, 86, 51);}
+.nav:hover .item:nth-of-type(2) a:hover::before {background: rgb(61, 179, 227);}
+.nav:hover .item:nth-of-type(3) a:hover::before {background: rgb(15, 45, 82);}
+.nav:hover .item:nth-of-type(4) a:hover::before {background: rgb(217, 136, 39);}
 
     @media (max-width: 900px) {
     .nav{display: none;}
@@ -254,12 +264,12 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 /* Locations */
 .locations {max-width: 1200px; margin: 0 auto;}
 .locations .group {display: flex; align-items: stretch; justify-content: center; margin: 0 -10px;}
-.locations .item {position: relative; display: flex; align-items: stretch; justify-content: space-between; margin: 20px; color: #fff; border-radius: 16px; overflow: hidden; z-index: 1;}
+.locations .item {position: relative; display: flex; align-items: center; justify-content: space-between; margin: 20px; color: #fff; border-radius: 16px; overflow: hidden; z-index: 1;}
 .locations .item > * {flex: 1; padding: 40px;}
 .locations .item a {text-decoration: none; color: inherit;}
 .locations .item .title {margin: 0;}
 .locations .item .info {font-family: helvetica, sans-serif; font-size: 1.8rem;}
-.locations .item .info > div:not(:last-of-type) {margin-bottom: 2em;}
+.locations .item .info > div:not(:last-of-type) {margin-bottom: 1em;}
 .locations .item .status {display: inline-flex; align-items: center; padding: 6px; border-radius: 3px;}
 .locations .item .status i {margin-right: 8px;}
 .locations .item .status.open i.fas {color: green;}
