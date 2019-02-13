@@ -10,11 +10,11 @@ html{font-size: 62.5%;}
 html[lang="en"]{opacity:0;}
 html.wf-active,html.wf-inactive{opacity: 1; transition: opacity .4s ease-out; }
 body{color: rgba(0,0,0,.8); background: rgb(248, 248, 248); font-family: 'EB Garamond', serif; font-size: 1.6rem;}
-p{font-size: 2rem; margin: 0 0 16px 0; font-weight: 400; line-height: 1.6;}
+p{font-size: 2rem; margin: 0 0 16px 0; font-weight: 500; line-height: 1.6;}
 p:last-of-type{margin: 0;}
 a{color: #ef4538;}
-ul{font-size: 2rem; padding: 0 0 22px 30px; font-weight: 400; line-height: 1.6; list-style: outside disc; overflow: hidden;}
-ol{font-size: 2rem; padding: 0 0 22px 30px; font-weight:  400; line-height: 1.6; overflow: hidden;}
+ul{font-size: 2rem; padding: 0 0 22px 30px; font-weight: 500; line-height: 1.6; list-style: outside disc; overflow: hidden;}
+ol{font-size: 2rem; padding: 0 0 22px 30px; font-weight:  500; line-height: 1.6; overflow: hidden;}
 li{position: relative;}
 h1{font-size: calc(2.5rem + 1.5vw); margin: 0 0 10px; line-height: 140%; font-weight: 400; display: block; width: 100%;}
 h2{font-size: calc(2.0rem + 1vw); margin: 0 0 10px; line-height: 140%; font-weight: 300; display: block;  width: 100%;}
@@ -265,6 +265,8 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
 
 /*Intro Text*/
 .intro_text{text-align: center; width:100%; max-width:960px; padding:10px; margin: 6em auto;}
+.intro_text p {opacity: 0.75;}
+
     @media (max-width: 768px) {
     .intro_text{margin: 80px auto 0;}
     }
