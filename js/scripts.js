@@ -1,3 +1,22 @@
+//Features heading spacing
+var features = document.querySelectorAll('.features .item .title');
+
+for (var i = 0; i < features.length; i++) {
+    var text = features[i].innerHTML;
+        text = text.split(' ');
+
+    var whole = '';
+    for(var t = 0; t < text.length; t++) {
+        var word = text[t];
+        if (word.length > 3 && t > 0) {
+            whole = whole+' <br>'+word;
+        } else {
+            whole = whole+ ' '+word;
+        }
+    }
+    features[i].innerHTML = whole;
+}
+
 //Open/Closed/Closing Status
 document.addEventListener('DOMContentLoaded', function() {
     var time = moment().format('Hmm'), day = moment().isoWeekday();
@@ -16,6 +35,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 })
+
+//Search
+const searcher = document.getElementById('searcher');
+const search = document.getElementById('search');
+const searchContainer = document.querySelector('.search_wrap');
+
+searcher.addEventListener('click', function() {
+    if (searcher.classList.contains('active')) {
+        searcher.classList.remove('active');
+        searchContainer.classList.remove('active');
+    } else {
+        searcher.classList.add('active');
+        searchContainer.classList.add('active');
+        search.focus();
+    }
+})
+
+//Submit on Enter of search input
+search.addEventListener('keypress', function(e) {
+    e = e || window.event;
+    if(e.keyCode === 13) {
+        //document.getElementById('search-form').submit();
+    }
+})
+
 
 // Sticky Header
 window.addEventListener('scroll', function() {
@@ -188,3 +232,17 @@ $(window).on('load resize orientationchange', function() {
 $('.slide').each(function(){
     $(this).removeAttr("aria-describedby");
 });
+
+// Events
+// $('.events .group').slick({
+//   autoplay: true,
+//   autoplaySpeed: 5000,
+//   dots: true,
+//   infinite: true,
+//   fade: false,
+//   speed: 700,
+//   slidesToShow: 3,
+//   slidesToScroll: 3,
+//   prevArrow:'<button class="prev" title="Previous Slide"><i class="fal fa-chevron-left"></i></button>',
+//   nextArrow:'<button class="next" title="Next Slide"><i class="fal fa-chevron-right"></i></button>'
+// });
