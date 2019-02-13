@@ -16,7 +16,7 @@ WebFontConfig = {
           'helvetica'
       ],
       urls: [
-          '../fonts/helvetica/style.css'
+          '/fonts/helvetica/style.css'
       ]
   },
   timeout: 2000
