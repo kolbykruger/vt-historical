@@ -44,7 +44,7 @@ img{max-width: 100%; height: auto; vertical-align: bottom; border: none;}
 .buttons.right {justify-content: flex-end;}
 .buttons > .button:only-child {margin: 0;}
 .button {display: inline-flex; align-items: center; margin: 0 1em 0 0; padding: 1em 1.5em; background: #ef4538; color: #fff; border-radius: 0.25em; transition: 150ms ease; text-decoration: none; user-select: none;}
-.button:hover, .button:focus { background: #f0574b; box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);}
+.button:hover, .button:focus { background: #f0574b; box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08); transform: translateY(-3px)}
 .button:active { box-shadow: 0 2px 4px 0 rgba(50,50,93,.1); transform: translateY(1px);}
 button.button, input[type="submit"].button {cursor: pointer; font-family: inherit; font-size: inherit; line-height: inherit; color: #fff; border: none; outline: none;}
 
