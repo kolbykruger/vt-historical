@@ -1,3 +1,16 @@
+// Scrollmagic Animations
+$(document).ready(function() {
+    var controller = new ScrollMagic.Controller;
+    $(".events, .features, .locations").each(function() {
+        new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: 0.75,
+            reverse: true
+        }).setClassToggle(this, "active").addTo(controller)
+        .addTo(controller);
+    })
+});
+
 //Features heading spacing
 var features = document.querySelectorAll('.features .item .title');
 
