@@ -33,21 +33,38 @@ for (var i = 0; i < features.length; i++) {
 //Open/Closed/Closing Status
 document.addEventListener('DOMContentLoaded', function() {
     var today = moment().format('YYYY-MM-DD');
-    var holidays = ['2019-01-01', '2019-01-21', '2019-02-18', '2019-03-05', '2019-05-27', '2019-07-04', '2019-08-16', '2019-09-02', '2019-11-11', '2019-11-28', '2019-12-25'];
+    var holidays = '2019-01-01, 2019-01-21, 2019-02-18, 2019-03-05, 2019-05-27, 2019-07-04, 2019-08-16, 2019-09-02, 2019-11-11, 2019-11-28, 2019-12-25';
+        holidays = holidays.split(',');
     var time = moment().format('Hmm'), day = moment().isoWeekday();
+
+    //Checks if today is in holidays array, triggered closed if true
+    if (holidays.includes(today)) {
+        statusClosed(document.querySelector('.locations .item:first-of-type .status'))
+        statusClosed(document.querySelector('.locations .item:last-of-type .status'))
+        return
+    }
 
     // 1 [Monday] - 7 [Sunday] // Time in MILITARY format
     updateStatus(document.querySelector('.locations .item:first-of-type .status'), 2, 7, 1000, 1600);
     updateStatus(document.querySelector('.locations .item:last-of-type .status'), 1, 6, 900, 1600);
 
+    //Updates the status based on params
     function updateStatus(element, startDay, endDay, startTime, endTime) {
         if (day >= startDay && day < endDay && time >= startTime && time < endTime) {
-            element.classList.add('open');
-            element.childNodes[2].textContent = 'Open';
+            statusOpen(element)
         } else {
-            element.classList.add('closed');
-            element.childNodes[2].textContent = 'Closed';
+            statusClosed(element)
         }
+    }
+    //Add a status of open
+    function statusOpen(element) {
+        element.classList.add('open');
+        element.childNodes[2].textContent = 'Open';
+    }
+    //Add a status of closed
+    function statusClosed(element) {
+        element.classList.add('closed');
+        element.childNodes[2].textContent = 'Closed';
     }
 })
 
