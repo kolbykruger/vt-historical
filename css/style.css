@@ -272,11 +272,7 @@ button.button, input[type="submit"].button {cursor: pointer; font-family: inheri
     }
 
 /* Locations */
-<<<<<<< HEAD
-.locations {max-width: 1200px; margin: 30px auto;}
-=======
 .locations {max-width: 1200px; margin: 6em auto 0;}
->>>>>>> bf7b4a319fcfdb09825b6e4517d4b2b667ba961d
 .locations .group {display: flex; align-items: stretch; justify-content: center; margin: 0 -10px;}
 .locations .item {position: relative; display: flex; align-items: center; justify-content: space-between; margin: 20px; color: #fff; border-radius: 16px; overflow: hidden; z-index: 1;}
 .locations .item > * {flex: 1; padding: 40px;}
